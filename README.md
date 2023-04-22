@@ -34,4 +34,11 @@
       res.cookie("Authorization", "Bearer " + "JWT로 만들어진 토큰을 반환하게 해보세요!");
       res.status(200).json({ token: "JWT로 만들어진 토큰을 반환하게 해보세요!" });
       ```
-
+   4. 추가 정보
+      - 로그인 기능을 왜 auth.js 로 명명했나?
+         Authenticate를 줄인 단어이며,
+         프론트엔드에서도 로그인 기능을 auth로 구현했기에 통일하기 위함
+      - 로그인을 왜 POST 요청으로 처리했나?
+         GET 요청은 데이터가 URL에 노출이 되기 때문에 보안 취약
+         REST API 관점에서 보았을 때,
+         인증 정보를 "생성"해서 받아온다고 보면 POST 요청이 적합
