@@ -9,3 +9,6 @@
     * app.use(M/W) : 모든 요청에 미들웨어가 실행
     * app.use('/api', M/W) : api로 시작하는 요청에서 미들웨어가 실행
     * app.post('/api', M/W) : api로 시작하는 POST(외 HTTP Method) 요청에서 미들웨어가 실행
+
+### 회원가입 기능 추가
+  - cookie, JWT (jsonwebtoken, cookie-parser) 이용
