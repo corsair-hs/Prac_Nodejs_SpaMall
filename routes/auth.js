@@ -35,3 +35,27 @@ router.post('/auth', async(req, res) => {
 
 
 module.exports = router;
+
+
+/*
+
+localhost:3000/api/auth
+
+{
+  "email": "raxniper@naver.com",
+  "password": "qwer1234"
+}
+
+POST 요청 해보면
+
+Response
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDQzZGNjYmFjNjdjMWU4NTE3ZjQxZjYiLCJpYXQiOjE2ODIxNzUxOTd9.0uC-vuquE0MHRgKUyu6yXUdE73FXPr5l16MB5AJgDeI"
+}
+
+Cookies
+Name : authorization
+Value : Bearer%20eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NDQzZGNjYmFjNjdjMWU4NTE3ZjQxZjYiLCJpYXQiOjE2ODIxNzUxOTd9.0uC-vuquE0MHRgKUyu6yXUdE73FXPr5l16MB5AJgDeI
+-> Value에 Bearer 형태의 값이 들어와있음
+
+*/
