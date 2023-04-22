@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
-const goodsRouter = require("./routes/goods");
+const goodsRouter = require("./routes/goods.js");
 const cartsRouter = require("./routes/carts.js");
 
 const connect = require("./schemas");
@@ -10,8 +10,10 @@ connect();
 
 
 app.use(express.json());
+
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static("assets"));
+
 app.use("/api", [goodsRouter, cartsRouter]);
 
 app.get('/', (req, res) => {
