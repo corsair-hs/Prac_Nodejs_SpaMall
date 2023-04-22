@@ -13,8 +13,8 @@ router.METHOD(PATH, HANDLER);
 const express = require('express');
 const router = express.Router();
 
-const Goods = require('../Schemas/goods');
-const Cart = require('../Schemas/carts');
+const Cart = require("../schemas/cart.js");
+const Goods = require("../schemas/goods.js");
 
 // localhost:3000/api  -> GET
 router.get('/', (req, res) => res.send('default url for goods.js get Method'));

@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-const Cart = require('../Schemas/carts')
-const Goods = require('../Schemas/goods');
+const Cart = require("../schemas/cart.js");
+const Goods = require("../schemas/goods.js");
 
 // 장바구니 조회 API
 router.get('/carts', async (req, res) => {
