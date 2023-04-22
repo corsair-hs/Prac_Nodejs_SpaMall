@@ -15,5 +15,5 @@
       - email, nickname, password, confirmPassword를 전달받음
       - password, confirmPassword 동일한지 검증
       - email, nickname DB 중복 검증
-      - email, nickname, password DB에 저장
+      - email, nickname, password DB에 저장 (비밀번호는 향후 crypto lib 통해 단방향 암호화 할 것)
       - 회원 가입 성공
