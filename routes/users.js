@@ -16,7 +16,7 @@ router.post('/users', async (req, res) => {
 
    // 이메일, 닉네임 DB 중복 검증
    const isExistuser = await UserSchema.findOne({
-      $or: [{eamile}, {nickname}]      // 이메일 또는 닉네임이 일치할 때, 조회한다.
+      $or: [{email}, {nickname}]      // 이메일 또는 닉네임이 일치할 때, 조회한다.
    });
    if (isExistuser) {
       res.status(400).json({
