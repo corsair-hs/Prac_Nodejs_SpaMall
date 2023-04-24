@@ -26,7 +26,7 @@ router.post("/goods", async (req, res) => {
 // 상품 조회 API
 router.get("/goods", async (req, res) => {
   const { category } = req.query;
-  const goods = await Goods.find({category})
+  const goods = await Goods.find(category ? {category} : {})
     .sort("-date")  // 생성시간을 통해 내림차순 정렬
     .exec();        // 쿼리 마무리
   const results = goods.map((item) => {
@@ -40,6 +40,23 @@ router.get("/goods", async (req, res) => {
   });
 
   return res.status(200).json({goods: results})
+});
+
+
+// 상품 상세 조회 API
+router.get("/goods/:goodsId", async (req, res) => {
+  const { goodsId } = req.params;
+  const goods = await Goods.findOne({goodsId})
+    .exec();        // 쿼리 마무리
+  const result = {
+      goodsId: goods.goodsId,
+      name: goods.name,
+      price: goods.price,
+      thumbnailUrl: goods.thumbnailUrl,
+      category: goods.category
+  };
+
+  return res.status(200).json({goods: result})
 });
 
 
