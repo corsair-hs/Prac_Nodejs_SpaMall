@@ -4,7 +4,7 @@ const router = express.Router();
 const Cart = require("../schemas/cart.js");
 const Goods = require("../schemas/goods.js");
 
-// localhost:3000/api/carts GET Method
+// 장바구니 조회 : localhost:3000/api/carts GET Method
 router.get("/carts", async(req,res) => {
     const carts = await Cart.find({});
     // [
